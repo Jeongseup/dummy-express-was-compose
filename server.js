@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const morgan = require('morgan');
 
 app.use(morgan((tokens, req, res) => [
+  `Client Hostname: ${req.hostname}`,
   `Method: ${tokens.method(req, res)}`,
   `URL: ${tokens.url(req, res)}`,
   `Status: ${tokens.status(req, res)}`,
